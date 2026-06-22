@@ -1,21 +1,63 @@
 # Website Content Summarizer
 
-> Chat with website content using OpenRouter and Ollama.
+> Extract, summarize, and chat with website content using local or cloud LLMs.
 
-A Python application that extracts website content and uses Large Language Models (LLMs) to summarize and answer questions about web pages.
+![Python](https://img.shields.io/badge/python-3.9%2B-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![LLM](https://img.shields.io/badge/LLM-OpenRouter%20%7C%20Ollama-orange)
+
+---
+
+## Overview
+
+Website Content Summarizer is a Python application that extracts textual content from web pages and uses Large Language Models (LLMs) to generate summaries and answer questions about website content.
+
+The project supports both cloud-based models through OpenRouter and local models through Ollama, allowing users to choose between remote and fully local inference.
+
+---
+
+## Motivation
+
+Large web pages often contain unnecessary HTML, navigation menus, advertisements, and boilerplate content that make them difficult to analyze with language models.
+
+This project provides a simple pipeline:
+
+1. Download webpage content.
+2. Remove irrelevant HTML elements.
+3. Extract the meaningful text.
+4. Send the content to an LLM.
+5. Generate summaries or answer questions.
 
 ---
 
 ## Features
 
-- Website content extraction
-- Automatic HTML cleaning
-- Website summarization
-- Question answering
-- Interactive chat
-- OpenRouter support
-- Ollama support
-- Local and cloud LLMs
+* Website content extraction
+* HTML cleaning and text processing
+* Automatic summarization
+* Question answering over webpage content
+* Interactive chat workflow
+* OpenRouter integration
+* Ollama integration
+* Local and cloud LLM support
+* Simple configuration using environment variables
+
+---
+
+## Supported Backends
+
+| Backend    | Description                             |
+| ---------- | --------------------------------------- |
+| OpenRouter | Access cloud LLMs through a unified API |
+| Ollama     | Run local models on your machine        |
+| OpenAI SDK | Compatible client interface             |
+
+Supported models include:
+
+* DeepSeek R1
+* Llama 3.2
+* OpenRouter models
+* Ollama local models
 
 ---
 
@@ -25,7 +67,6 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/BenyaminMahdavifar/website-content-summarizer.git
-
 cd website-content-summarizer
 ```
 
@@ -37,7 +78,7 @@ pip install -r requirements.txt
 
 ---
 
-## Environment Variables
+## Configuration
 
 Create a `.env` file.
 
@@ -77,6 +118,16 @@ Question:
 What is this website about?
 ```
 
+Example output:
+
+```text
+Summary:
+OpenAI is an artificial intelligence research and deployment company.
+
+Answer:
+The website describes OpenAI's products, research, and AI technologies.
+```
+
 ---
 
 ## Project Structure
@@ -96,26 +147,36 @@ website-content-summarizer/
 
 ---
 
-## Supported Models
+## Technologies
 
-- DeepSeek R1
-- Llama 3.2
-- OpenRouter models
-- Ollama local models
+* Python
+* BeautifulSoup
+* Requests
+* OpenAI SDK
+* OpenRouter
+* Ollama
 
 ---
 
-## Technologies
+## Future Improvements
 
-- Python
-- BeautifulSoup
-- Requests
-- OpenAI SDK
-- OpenRouter
-- Ollama
+* Multi-page crawling
+* Retrieval-Augmented Generation (RAG)
+* Conversation memory
+* Vector database support
+* PDF export
+* Streamlit web interface
 
 ---
 
 ## License
 
 MIT
+
+---
+
+## Author
+
+**Benyamin Mahdavifar**
+
+GitHub: https://github.com/BenyaminMahdavifar
