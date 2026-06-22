@@ -90,8 +90,8 @@ website-content-summarizer/
 ├── .env.example
 ├── README.md
 └── examples/
-    ├── openrouter_example.py
-    └── ollama_example.py
+    ├── openrouter.py
+    └── ollama.py
 ```
 
 ---
